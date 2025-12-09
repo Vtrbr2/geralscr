@@ -11,13 +11,13 @@
 </head>
 <body>
     <!-- Loading Screen -->
-    <div class="loading">
-        <div class="loading-content">
-            <svg viewBox="0 0 50 50">
-                <circle cx="25" cy="25" r="20"></circle>
-            </svg>
-            <p>Carregando...</p>
-        </div>
+    <div class="loading" id="global-loader">
+    <div class="loading-content">
+        <svg viewBox="0 0 50 50" class="loader-circle">
+            <circle cx="25" cy="25" r="20"></circle>
+        </svg>
+        <p>Carregando...</p>
+    </div>
     </div>
 
     <!-- Header -->
@@ -100,6 +100,43 @@
     </div>
 
     </section>
-     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("global-loader");
+
+    // Some depois de 4s ao entrar no site
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 4000);
+
+    // Ativar loader ao clicar em links OU botões
+    document.addEventListener("click", e => {
+        const el = e.target.closest("a, button[data-loader]");
+        if (!el) return;
+
+        // Links internos (#) só precisam exibir o loader por 1s
+        if (el.tagName === "A" && el.getAttribute("href").startsWith("#")) {
+            loader.classList.remove("hide");
+            setTimeout(() => {
+                loader.classList.add("hide");
+            }, 1000);
+            return;
+        }
+
+        // Links normais → espera 4s e navega
+        if (el.tagName === "A") {
+            e.preventDefault();
+            const href = el.getAttribute("href");
+
+            loader.classList.remove("hide");
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 4000);
+        }
+    });
+});
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
