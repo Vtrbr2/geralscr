@@ -239,3 +239,79 @@ nav {
     100% { opacity: 1; transform: scale(1); }
     }
     
+/* Seção geral */
+.stats-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Parte das estatísticas */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.stat-item h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.stat-item p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #8d8d8d;
+    margin-top: 4px;
+}
+
+/* Parte dos botões */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.btn {
+    padding: 16px 28px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botão branco */
+.primary-btn {
+    background: #fff;
+    color: #000;
+}
+
+/* Botão escuro */
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+    .stats-container {
+        gap: 20px;
+    }
+
+    .stat-item h2 {
+        font-size: 34px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 14px 22px;
+    }
+}
