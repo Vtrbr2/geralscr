@@ -316,7 +316,7 @@ nav {
         padding: 14px 22px;
     }
 }
-/* FUNDO DO LOADER */
+/* Fundo do Loader */
 .loading {
     position: fixed;
     inset: 0;
@@ -330,58 +330,40 @@ nav {
     transition: opacity .4s ease, visibility .4s ease;
 }
 
-/* Esconder */
+/* Esconde */
 .loading.hide {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Loader padrão (círculo girando) */
-.spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #7aaaff;  /* azul claro */
-    border-top: 6px solid #bfbfbf; /* cinza */
-    border-right: 6px solid #a366ff; /* roxo */
-    border-radius: 50%;
-    animation: spin 1s linear infinite, changeColors 3s ease-in-out infinite;
+/* Loader estilo Netflix */
+.netflix-loader {
+    display: flex;
+    gap: 10px;
 }
 
-/* Texto opcional */
-.loading p {
-    color: white;
-    font-family: Arial;
-    margin-top: 15px;
-    text-align: center;
+/* Barras */
+.netflix-loader div {
+    width: 10px;
+    height: 40px;
+    border-radius: 5px;
+    animation: pulse 0.9s infinite ease-in-out;
+    background: #e50914; /* VERMELHO NETFLIX – ultra visível no preto */
 }
 
-/* Girar */
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
+/* Segunda barra com atraso */
+.netflix-loader div:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
-/* Alternância suave das cores */
-@keyframes changeColors {
-    0% {
-        border-color: #7aaaff;
-        border-top-color: #bfbfbf;
-        border-right-color: #a366ff;
-    }
-    33% {
-        border-color: #bfbfbf;
-        border-top-color: #a366ff;
-        border-right-color: #7aaaff;
-    }
-    66% {
-        border-color: #a366ff;
-        border-top-color: #7aaaff;
-        border-right-color: #bfbfbf;
-    }
-    100% {
-        border-color: #7aaaff;
-        border-top-color: #bfbfbf;
-        border-right-color: #a366ff;
-    }
+/* Terceira barra com mais atraso */
+.netflix-loader div:nth-child(3) {
+    animation-delay: 0.4s;
 }
+
+/* Animação */
+@keyframes pulse {
+    0% { transform: scaleY(1); opacity: 0.5; }
+    50% { transform: scaleY(2); opacity: 1; }
+    100% { transform: scaleY(1); opacity: 0.5; }
+        }
