@@ -95,3 +95,60 @@ nav {
         right: 0; /* MOSTRA O MENU */
     }
 }
+
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* ocupa a tela inteira */
+    overflow: hidden;
+}
+
+/* Imagem chamada diretamente no HTML */
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* deixa a imagem responsiva */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Gradiente preto no final da imagem */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;              /* pode ajustar */
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #000);
+    z-index: 0;
+}
+
+/* Conteúdo centralizado */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #ddd;
+}
+
+/* Próxima seção */
+.conteudo {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    }
