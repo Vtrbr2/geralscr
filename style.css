@@ -316,6 +316,7 @@ nav {
         padding: 14px 22px;
     }
 }
+/* FUNDO DO LOADER */
 .loading {
     position: fixed;
     inset: 0;
@@ -326,43 +327,61 @@ nav {
     z-index: 99999;
     opacity: 1;
     visibility: visible;
-    transition: opacity .5s ease, visibility .5s ease;
+    transition: opacity .4s ease, visibility .4s ease;
 }
 
+/* Esconder */
 .loading.hide {
     opacity: 0;
     visibility: hidden;
 }
 
-.loading-content {
-    text-align: center;
+/* Loader padrão (círculo girando) */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #7aaaff;  /* azul claro */
+    border-top: 6px solid #bfbfbf; /* cinza */
+    border-right: 6px solid #a366ff; /* roxo */
+    border-radius: 50%;
+    animation: spin 1s linear infinite, changeColors 3s ease-in-out infinite;
+}
+
+/* Texto opcional */
+.loading p {
     color: white;
     font-family: Arial;
+    margin-top: 15px;
+    text-align: center;
 }
 
-.loader-circle {
-    width: 80px;
-    height: 80px;
-    animation: rotate 1.3s linear infinite;
-}
-
-.loader-circle circle {
-    fill: none;
-    stroke-width: 5;
-    stroke-linecap: round;
-    stroke: #7aaaff;
-    animation: changeColor 3s ease-in-out infinite;
-}
-
-@keyframes rotate {
+/* Girar */
+@keyframes spin {
     100% {
         transform: rotate(360deg);
     }
 }
 
-@keyframes changeColor {
-    0% { stroke: #7aaaff; }
-    33% { stroke: #bfbfbf; }
-    66% { stroke: #a366ff; }
-    100% { stroke: #7aaaff; }
+/* Alternância suave das cores */
+@keyframes changeColors {
+    0% {
+        border-color: #7aaaff;
+        border-top-color: #bfbfbf;
+        border-right-color: #a366ff;
     }
+    33% {
+        border-color: #bfbfbf;
+        border-top-color: #a366ff;
+        border-right-color: #7aaaff;
+    }
+    66% {
+        border-color: #a366ff;
+        border-top-color: #7aaaff;
+        border-right-color: #bfbfbf;
+    }
+    100% {
+        border-color: #7aaaff;
+        border-top-color: #bfbfbf;
+        border-right-color: #a366ff;
+    }
+}
