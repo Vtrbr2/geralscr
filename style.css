@@ -591,7 +591,7 @@ nav {
 
 
 /* CORES DOS CARDS */
-.card-blue  { background: #808080; border: 1px solid #3f51b5; }
+.card-blue  { background:linear-gradient(#000, #1b1b1b); border: 1px solid #3f51b5; }
 .card-purple{ background: #808080; border: 1px solid #8b5cf6; }
 .card-red   { background: #3b0f0f; border: 1px solid #ff5252; }
 .card-green { background: #0f3b1f; border: 1px solid #4caf50; }
