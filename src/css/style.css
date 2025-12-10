@@ -801,3 +801,14 @@ nav {
                 grid-template-columns: 1fr;
             }
     }
+.tag-novo {
+    background: #8b5cf6; /* roxo moderno */
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+}
