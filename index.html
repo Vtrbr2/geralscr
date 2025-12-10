@@ -498,6 +498,15 @@ window.addEventListener('click', e => {
         }
     });
 });
+        // Fecha o loader sempre que a hash muda (#seção)
+window.addEventListener("hashchange", () => {
+    const loader = document.getElementById("global-loader");
+
+    loader.classList.remove("hide");
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 800);
+});
     </script>
     <script>
 const scriptCards = document.querySelectorAll('.script-card');
