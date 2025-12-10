@@ -47,68 +47,134 @@ nav {
     width: 35px;
     margin-right: 10px;
 }
-
-/* LINKS DESKTOP */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+/* Navbar ao rolar */
+.navbar.scrolled {
+    min-height: 8vh;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
+
+/* Efeito ao rolar */
+.navbar.scrolled .logo img {
+    height: 45px; /* diminui levemente ao rolar */
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-    opacity: 0.7;
-}
+/* Efeito hover opcional */
+.logo a:hover img {
+    transform: scale(1.05);
+    }
+/*nav burguer*/
 
-/* HAMBURGER */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
+    /* Botão hamburguer */
+    .menu-btn {
+      width: 44px; height: 44px;
+      background: transparent; border: none;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      cursor: pointer; z-index: 201;
+      position: absolute;
+      top: 10px; right: 20px;
+   
+    }
+    .menu-btn span {
+      display: block;
+      height: 2px; width: 28px;
+      background: #000; /*mexi aq*/
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: .3s;
+    }
+    .menu-btn.open span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-btn.open span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
 
-.hamburger span {
+    /* MENU GRADIENTE ROXO - abaixo do header */
+    .nav-menu {
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100vw;
+      max-height: 0;
+      background: linear-gradient(135deg, #ffffff, #e9f3ff); /* branco → azul claro */   box-shadow: 0 4px 32px rgba(140,92,246,0.10);
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.52,0.16,0.24,0.96);
+      z-index: 199;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-menu.open {
+      max-height: 350px;
+    }
+
+    .nav-menu ul {
+      margin: 0; padding: 0;
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-menu li {
+      width: 100%;
+    }
+    .nav-menu a {
+      color: #000; /*mexi aqui*/
+      padding: 16px 0;
+      text-align: center;
+      width: 100%;
+      font-size: 1.15em;
+      text-decoration: none;
+      transition: background .18s, font-weight .18s;
+      display: block;
+    }
+    .nav-menu a:hover {
+      background: #000; /*mexi aqui*/
+      font-weight: 600;
+    }
+
+    @media(min-width: 768px) {
+      .navbar { position: relative; box-shadow: none;}
+      .menu-btn { display: none !important; }
+      .nav-menu {
+        position: static;
+        background: none;
+        box-shadow: none;
+        max-height: none;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        top: auto;
+        left: auto;
+      }
+      .nav-menu.open { max-height: none; }
+      .nav-menu ul { flex-direction: row;}
+      .nav-menu li { width: auto;}
+      .nav-menu a {
+        color: #000; /*mexi por ultimo*/
+        padding: 12px 18px;
+        background: transparent;
+        font-weight: 500;
+      }
+        }
+
+/*.hamburger span {
     width: 28px;
     height: 3px;
-    background: #fff;   /* BARRINHAS BRANCAS */
+    background: #fff;   /* BARRINHAS BRANCAS 
     border-radius: 5px;
     transition: 0.3s;
 }
+*/
 
 
-/* ============ MOBILE ============ */
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -250px; /* ESCONDIDO NA DIREITA */
-        height: 100vh;
-        width: 250px;
-        background: #000;
-        flex-direction: column;
-        padding-top: 100px;
-        gap: 30px;
-        transition: 0.4s ease; /* ANIMAÇÃO VINDO DA DIREITA */
-        z-index: 1200;
-    }
-
-    .nav-links.open {
-        right: 0; /* MOSTRA O MENU */
-    }
-}
 
 
 /* HERO ------------------------------------------------------------------ */
