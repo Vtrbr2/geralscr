@@ -594,12 +594,12 @@ nav {
 
 /* CORES DOS CARDS */
 .card-blue  { background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
-.card-purple{ background: linear-gradient(#000, #1b1b1b); border: 1px solid #fff; }
-.card-red   { background: linear-gradient(#000, #1b1b1b); border: 1px solid #fff; }
-.card-green { background: linear-gradient(#000, #1b1b1b); border: 1px solid #fff; }
-.card-orange{ background: linear-gradient(#000, #1b1b1b); border: 1px solid #fff; }
-.card-pink  { background: linear-gradient(#000, #1b1b1b); border: 1px solid #fff; }
-.card-gold  { background: linear-gradient(#000, #1b1b1b); border: 1px solid #fff; }
+.card-purple{ background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
+.card-red   { background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
+.card-green { background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
+.card-orange{ background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
+.card-pink  { background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
+.card-gold  { background: linear-gradient(#000, #1b1b1b); border: 1px solid #000; }
 
 .script-card:hover {
     transform: translateY(-6px);
