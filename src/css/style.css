@@ -687,52 +687,116 @@ nav {
     text-align: center;
 }
 
-.colab-title {
-    font-size: 28px;
-    color: #fff;
-    font-weight: 700;
-    margin-bottom: 40px;
-}
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.colab-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
 
-.colab-card {
-    width: 160px;
-    background: #0f0f0f;
-    border: 1px solid #222;
-    border-radius: 18px;
-    padding: 20px;
-    transition: .3s ease;
-    cursor: pointer;
-}
+        .badge svg {
+            width: 20px;
+            height: 20px;
+        }
 
-.colab-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 15px rgba(120, 82, 255, 0.3);
-    border-color: #8b5cf6;
-}
+        h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-.colab-card img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 12px;
-    border: 3px solid #8b5cf6;
-    transition: .3s ease;
-}
+        .subtitle {
+            font-size: 18px;
+            color: #999;
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-.colab-card:hover img {
-    border-color: #6240d9;
-}
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-.colab-card h3 {
-    color: #fff;
-    font-size: 16px;
-    margin: 0;
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .role {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
     }
