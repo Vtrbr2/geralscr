@@ -560,7 +560,7 @@ nav {
 /* SEÇÃO FUNDO PRETO → CINZA */
 .scripts-section {
     padding: 60px 20px;
-    background: linear-gradient(#000, #1b1b1b);
+    background: #000;
     text-align: center;
 }
 
