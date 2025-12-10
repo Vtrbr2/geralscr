@@ -466,30 +466,31 @@ window.addEventListener('click', e => {
         document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById("global-loader");
 
-    // Some depois de 4s ao entrar no site
+    // Some após entrar no site
     setTimeout(() => {
         loader.classList.add("hide");
     }, 2000);
 
-    // Ativar loader ao clicar em links OU botões
     document.addEventListener("click", e => {
         const el = e.target.closest("a, button[data-loader]");
         if (!el) return;
 
-        // Links internos (#) só precisam exibir o loader por 1s
-        if (el.tagName === "A" && el.getAttribute("href").startsWith("#")) {
-            loader.classList.remove("hide");
-            setTimeout(() => {
-                loader.classList.add("hide");
-            }, 1000);
+        // Pegar href
+        const href = el.getAttribute("href");
+
+        // 1) NÃO mostrar loader em links sem navegação
+        if (!href || href === "#" || href.startsWith("#")) {
+            return; // <-- IMPORTANTE
+        }
+
+        // 2) Se o link abre a MESMA página, não ativa loader
+        if (href === window.location.pathname) {
             return;
         }
 
-        // Links normais → espera 4s e navega
+        // 3) Loader ativado apenas para navegação real
         if (el.tagName === "A") {
             e.preventDefault();
-            const href = el.getAttribute("href");
-
             loader.classList.remove("hide");
 
             setTimeout(() => {
@@ -497,15 +498,6 @@ window.addEventListener('click', e => {
             }, 2000);
         }
     });
-});
-        // Fecha o loader sempre que a hash muda (#seção)
-window.addEventListener("hashchange", () => {
-    const loader = document.getElementById("global-loader");
-
-    loader.classList.remove("hide");
-    setTimeout(() => {
-        loader.classList.add("hide");
-    }, 800);
 });
     </script>
     <script>
